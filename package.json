@@ -1,0 +1,107 @@
+{
+  "name": "trainningtypescript",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "d": "cross-os debug",
+    "r": "cross-os release",
+    "k": "cross-os apk"
+  },
+  "cross-os": {
+    "debug": {
+      "darwin": "sh script/script_build_dev.sh",
+      "win32": "powershell -file script/script_build_dev.ps1"
+    },
+    "release": {
+      "darwin": "sh script/script_build_release_dev.sh",
+      "win32": "powershell -file script/script_build_release_dev.ps1"
+    },
+    "apk": {
+      "darwin": "sh script/script_build_apk_dev.sh",
+      "win32": "powershell -file script/script_build_apk_dev.ps1"
+    }
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@react-native-async-storage/async-storage": "^1.15.15",
+    "@react-native-community/datetimepicker": "^5.1.0",
+    "@react-navigation/bottom-tabs": "^6.0.9",
+    "@react-navigation/core": "^6.1.0",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.5.0",
+    "@reduxjs/toolkit": "^1.7.1",
+    "@types/react-native-loading-spinner-overlay": "^0.5.3",
+    "apisauce": "^2.1.5",
+    "axios": "^0.25.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "buffer": "^6.0.3",
+    "cross-os": "^1.4.0",
+    "deepmerge": "^4.2.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "i18n-js": "^3.8.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "qs": "^6.10.3",
+    "react": "17.0.2",
+    "react-native": "0.66.4",
+    "react-native-background-timer": "^2.4.1",
+    "react-native-calendars": "^1.1277.0",
+    "react-native-charts-wrapper": "^0.5.7",
+    "react-native-config": "^1.4.5",
+    "react-native-device-info": "^8.4.8",
+    "react-native-dropdown-picker": "^5.3.0",
+    "react-native-loading-spinner-overlay": "2.0.0",
+    "react-native-modal-datetime-picker": "^13.0.1",
+    "react-native-paper": "^4.11.2",
+    "react-native-popup-menu": "^0.15.12",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.11.0",
+    "react-native-toast-message": "^2.1.1",
+    "react-native-uuid": "^2.0.1",
+    "react-native-vector-icons": "^9.0.0",
+    "react-redux": "^7.2.6",
+    "redux-logger": "^3.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/i18n-js": "^3.8.2",
+    "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.178",
+    "@types/qs": "^6.9.7",
+    "@types/react-native": "^0.66.4",
+    "@types/react-native-background-timer": "^2.0.0",
+    "@types/react-native-vector-icons": "^6.4.10",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/redux-logger": "^3.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^8.7.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.4.4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
