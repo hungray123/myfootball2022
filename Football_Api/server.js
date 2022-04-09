@@ -3,6 +3,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const User = require('./model/user')
+const Football= require('./model/BookFootball')
 const auth = require('./Middleware/auth')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -149,7 +150,7 @@ app.post('/api/change-fullname',async(req,res)=>{
 				$set:{fullName:fullName}
 			}
 		)
-		res.json({ status: 'ok' })
+		res.json({ status: 'ok',FullNameUser:fullName })
 
 
 	}catch(e){
@@ -198,6 +199,41 @@ app.post('/api/change-password', async (req, res) => {
 		console.log(error)
 		res.json({ status: 'error', error: 'thieu thuoc tinh' })
 	}
+})
+
+//FOOTBALL PITCH (BILL)
+
+app.post('/api/book-football-pitch', async(req, res)=>{
+	//const token = req.header('Authorization').replace('Bearer ','')
+	//const data =  jwt.verify(token, JWT_SECRET)
+
+	const {
+		customer,
+		phone,
+		pitchName,
+		startTime,
+		date,
+		price,
+		comment,
+		username,
+	}=req.body;
+
+	try {
+		const response= await Football.create({
+			customer,
+			phone,
+			pitchName,
+			startTime,
+			date,
+			price,
+			comment,
+			username,
+		})
+		console.log("Thanh Cong",response)
+	} catch (error) {
+		console.log("loi roi",e)
+	}
+	res.json({ status: 'ok' })
 })
 
 
